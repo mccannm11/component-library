@@ -1,8 +1,13 @@
 version: 2.1
 orbs:
   node: circleci/node@3.0.0
+  
+jobs:
+  build:
+    command: npm run build
+
 workflows:
-  node-tests:
+  build:
     jobs:
-      - node/build
+      - build
 
