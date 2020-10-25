@@ -4,7 +4,10 @@ orbs:
   
 jobs:
   build:
-    command: npm run build
+    steps:
+      - run:
+        name: Build react app 
+        command: npm run build
 
 workflows:
   build:
