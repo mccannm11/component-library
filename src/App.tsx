@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from "react"
+import React, { FC } from "react"
 import { GlobalStyles } from "./styles/GlobalStyles"
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom"
 import { Redirects, Routes } from "./utilities/Routes"

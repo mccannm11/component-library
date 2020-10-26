@@ -1,4 +1,10 @@
-import React, { useEffect, useImperativeHandle, useRef, useState } from "react"
+import React, {
+  useCallback,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  useState
+} from "react"
 import { Spacer } from "../utilities/Spacer"
 import styled from "styled-components"
 import { Colors } from "../styles/Colors"
@@ -75,10 +81,13 @@ const formFieldWrapper = <
 
     const validationState: ValidationState = props.error ? "invalid" : "valid"
 
-    const calculateFormElementState = () =>
-      setFormElementState(
-        inputRef.current.value.length === 0 && !disabled ? "closed" : "open"
-      )
+    const calculateFormElementState = useCallback(
+      () =>
+        setFormElementState(
+          inputRef.current.value.length === 0 && !disabled ? "closed" : "open"
+        ),
+      [setFormElementState, disabled]
+    )
 
     const handleInputBlur = () => {
       console.log("Input blur")
@@ -91,7 +100,7 @@ const formFieldWrapper = <
       // inputRef.current.click()
       // inputRef.current.blur()
       calculateFormElementState()
-    }, [])
+    }, [calculateFormElementState])
 
     const handleWrapperClick = () => {
       console.log("HOC Wrapper click")

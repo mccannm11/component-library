@@ -9,10 +9,12 @@ const StyledPanel = styled.div<PanelProps>`
   border-radius: 4px;
   padding: ${(props) => props.padding}px;
   border: 1px solid #ccc;
+  max-width: ${({ maxWidth }) => (maxWidth ? `${maxWidth}px` : "inherit")};
 `
 
 const StyledPanelHeader = styled.div<PanelProps>`
-  margin: 0 -${(props) => props.padding}px;
+  margin: -${(props) => props.padding}px;
+  padding: ${(props) => props.padding}px 0;
   color: black;
 `
 
@@ -43,6 +45,7 @@ const PanelContext = React.createContext<PanelContextProps>({})
 
 type PanelProps = {
   padding?: Pixel
+  maxWidth?: Pixel
 }
 
 const Panel: FC<PanelProps> = ({ padding = 16, ...props }) => {
