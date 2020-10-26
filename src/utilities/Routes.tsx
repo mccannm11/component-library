@@ -2,8 +2,8 @@ import { ComponentType } from "react"
 import { HomePage } from "../pages/HomePage"
 import { TypographyPage } from "../pages/TypographyPage"
 import { FormsPage } from "../pages/FormsPage"
-import React from "react"
 import { ColorsPage } from "../pages/ColorsPage"
+import { SurfacesPage } from "../pages/SurfacesPage"
 
 export type Route = {
   path: string
@@ -49,6 +49,12 @@ const Routes: Route[] = [
     path: "/colors",
     component: ColorsPage,
     title: "Colors",
+    exact: false
+  },
+  {
+    path: "/surfaces",
+    component: SurfacesPage,
+    title: "Surfaces",
     exact: false
   }
 ]

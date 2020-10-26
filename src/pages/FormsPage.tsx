@@ -8,11 +8,7 @@ import { Colors } from "../styles/Colors"
 import { ConnectedButton } from "../inputs/Button"
 import { FormProvider, useForm } from "react-hook-form"
 import { $ } from "../utilities/helpers"
-import {
-  BaseSelectField,
-  ConnectedSelectField,
-  SelectField
-} from "../inputs/SelectField"
+import { ConnectedSelectField } from "../inputs/SelectField"
 import { Panel, PanelHeader } from "../surfaces/Panel"
 import { Grid } from "../utilities/Grid"
 import JSONPretty from "react-json-pretty"
@@ -90,7 +86,6 @@ const FormsPage = () => {
               label="State"
               name="state"
               options={[
-                { id: "", label: "" },
                 { id: "MA", label: "Mass of two shits" },
                 { id: "VT", label: "Vermont" },
                 { id: "CT", label: "No one knows how to spell this" }
@@ -102,9 +97,7 @@ const FormsPage = () => {
               </ConnectedButton>
             </StyledFormFooter>
           </StyledFormLayout>
-
           <Spacer height={4} />
-
           <Grid columns={2} padding={0.75} grow>
             <Panel>
               <PanelHeader>Form state</PanelHeader>
@@ -112,14 +105,12 @@ const FormsPage = () => {
                 <JSONPretty data={formMethods.formState} />
               </Code>
             </Panel>
-
             <Panel>
               <PanelHeader>All watched data</PanelHeader>
               <Code>
                 <JSONPretty data={watchAll} />
               </Code>
             </Panel>
-
             <Panel>
               <PanelHeader>Submitted data</PanelHeader>
               <Code>
@@ -127,7 +118,6 @@ const FormsPage = () => {
               </Code>
             </Panel>
           </Grid>
-
           <Spacer height={4} />
         </form>
       </FormProvider>

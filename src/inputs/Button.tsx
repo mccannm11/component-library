@@ -2,7 +2,7 @@ import styled, { css } from "styled-components"
 import React, { FC, HTMLAttributes, useEffect } from "react"
 import { Color, Colors } from "../styles/Colors"
 import { animate } from "../styles/Mixins"
-import { useForm, useFormContext } from "react-hook-form"
+import { useFormContext } from "react-hook-form"
 
 type ButtonSize = "small" | "medium" | "large"
 
