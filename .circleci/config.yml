@@ -4,11 +4,13 @@ orbs:
   
 jobs:
   build:
+    machine:
+      image: ubuntu-1604:202007-01
     steps:
       - run:
         name: Build react app 
         command: npm run build
-
+        
 workflows:
   build:
     jobs:
